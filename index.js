@@ -98,7 +98,7 @@ Car.prototype.drive = function(distance){
         + Should return a string "Playing with x", x being the favorite toy.
 */
 function Baby(name, age, favoriteToy) {
-  Person.call(this, name, age, favoriteToy);
+  Person.call(this, name, age);
   this.favoriteToy = favoriteToy
 }
 Baby.prototype = Object.create(Person.prototype);
@@ -110,10 +110,16 @@ Baby.prototype.play = function(){
   TASK 4
 
   In your own words explain the four principles for the "this" keyword below:
-  1. 
-  2. 
-  3. 
-  4. 
+  
+  1. When in global scope, this is pointing to the window or console object. In window, it is all of JS
+  
+  2. implicit binding, the object to the left of the dot is this.
+  
+  3. new binding, when this is used in a contr. and a new instance fo that object is created than this is pointing to the new instance of that object.
+  
+  4. explicit binding, when call or apply is used this is explicitly pointing to the object that you have used call on. So this points to the object whose properties
+  you would like to give to another object
+  SO in the example Person.call(this, name, age, favoriteToy); this is pointing to person and gives the person properties to Baby.
 */
 
 
